@@ -1,0 +1,16 @@
+{
+  "name": "super-mario",
+  "version": "1.0.0",
+  "description": "Super mario game js implemetantion based on video tour of meth meth method",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve ./public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "flow-remove-types": "^1.2.1",
+    "serve": "^6.2.0"
+  }
+}
