@@ -3,7 +3,6 @@ export function loadImage(url) {
         const image = new Image();
         image.src = url;
         image.addEventListener('load', function () {
-            setTimeout(resolve, 2000, image)
             resolve(image);
         });
     });
@@ -12,6 +11,5 @@ export function loadImage(url) {
 export function loadLevel(level) {
     return fetch(`./levels/${level}.json`)
         .then(response =>response.json())
-        .then(json => new Promise(resolve=>setTimeout(resolve, 2000, json)));
 
 }
