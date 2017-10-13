@@ -1,10 +1,22 @@
-export function createBackgroundLayer(backgrounds, sprites) {
+
+
+export function createSpriteLayer(entities) {
+    return function drawSpriteLayer(context) {
+        entities.forEach(entity =>{
+            entity.draw(context);
+        })
+    }
+}
+
+export function createBackgroundLayer(level, sprites) {
     const buffer = document.createElement('canvas');
     buffer.width = 256;
     buffer.height = 240;
 
-    backgrounds.forEach(background => {
-        drawBackground(background, buffer.getContext('2d'), sprites);
+    const context = buffer.getContext('2d');
+
+    level.tiles.forEach((tile, x, y)=>{
+        sprites.drawTile(tile.name, context, x, y);
     });
 
     return function drawBackgroundLayer(context) {
